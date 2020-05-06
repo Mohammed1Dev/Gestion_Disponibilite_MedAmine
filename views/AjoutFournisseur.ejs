@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="align-center">
+      <a href="/addProduit" class="btn btn-lg btn-success">Ajout Produit</a>
+      <a href="/addFournisseur" class="btn btn-lg btn-success">Ajout Fournisseur</a>
+      <a href="/addRayon" class="btn btn-lg btn-success">Ajout Rayons</a>
+      <a href="/rayons" class="btn btn-lg btn-success">Consultation Rayons</a>
+      <a href="/Fournisseur" class="btn btn-lg btn-success">Consultation Fournisseur</a>
+    </div>
+<div class="container">
+  <h1><%= title %></h1>
+  <form action="/SaveFournisseur" method="post">
+    <div class="form-group">
+      <label>Id_Fournisseur:</label>
+      <input type="text" class="form-control"  placeholder="Enter Id" name="id_f" required>
+    </div>
+
+    <div class="form-group">
+      <label>Nom_Fournisseur:</label>
+      <input type="text" class="form-control"  placeholder="Enter Name" name="nom_f">
+    </div>
+    <div class="form-group">
+      <label for="Nationalité">Tel +:</label>
+      <input type="tel" class="form-control"  placeholder="Enter Phone Number" name="tel">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>

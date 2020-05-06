@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./public/css/main.css">
+</head>
+</head>
+<body>
+
+<div class="container">
+  <h1><%= title %></h1>
+  <form action="/updateProduit" method="post">
+
+    <input type="hidden" value="<%= row.id_produit %>" name="id">
+    <div class="form-group">
+      <label for="idF">id_fournisseur:</label>
+      <input type="text" class="form-control"   value="<%= row.id_fournisseur %>" name="idF" required>
+    </div>
+    <div class="form-group">
+      <label for="idR">id_rayon:</label>
+      <input type="text" class="form-control"   value="<%= row.id_rayon %>" name="idR" required>
+    </div>
+    <div class="form-group">
+      <label for="Nom">Nom_produit:</label>
+      <input type="text" class="form-control"   value="<%= row.nom_produit %>" name="nom" required>
+    </div>
+    <div class="form-group">
+      <label for="Qun">Quantité:</label>
+      <input type="text" class="form-control"  value="<%= row.quantite %>" name="Qun" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>

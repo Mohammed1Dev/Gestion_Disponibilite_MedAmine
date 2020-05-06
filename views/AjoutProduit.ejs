@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="align-center">
+      <a href="/addProduit" class="btn btn-lg btn-success">Ajout Produit</a>
+      <a href="/addFournisseur" class="btn btn-lg btn-success">Ajout Fournisseur</a>
+      <a href="/addRayon" class="btn btn-lg btn-success">Ajout Rayons</a>
+      <a href="/rayons" class="btn btn-lg btn-success">Consultation Rayons</a>
+      <a href="/Fournisseur" class="btn btn-lg btn-success">Consultation Fournisseur</a>
+    </div>
+<div class="container">
+  <h1><%= title %></h1>
+  <form action="/SaveProduit" method="post" >
+    <div class="form-group">
+      <label>Id_Produit:</label>
+      <input type="text" class="form-control"  placeholder="Enter Name" name="idP" required>
+    </div>
+    <div class="form-group">
+      <label>Id_Fournisseur:</label>
+      <!-- <select class="form-control" method="get" name="idF" required>
+        <% idR.forEach(function(row){ %>
+        <option><%= row.id_fournisseur %></option>
+        <% )}; %>
+      </select> -->
+    </div>
+    <div class="form-group">
+      <label>Id_Rayon:</label>
+      <!-- <select class="form-control"   name="idR" required>
+        <% idR.forEach(function(row){ %>
+        <option><%= row.id_rayon %></option>
+        <% )}; %>
+      </select> -->
+    </div>
+    <div class="form-group">
+      <label>nom_produit:</label>
+      <input type="text" class="form-control"  placeholder="Enter text" name="nom">
+    </div>
+    <div class="form-group">
+      <label for="Nationalité">Quantité:</label>
+      <input type="text" class="form-control"  placeholder="Enter text" name="quantite">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>

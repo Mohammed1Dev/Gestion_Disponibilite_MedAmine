@@ -1,0 +1,17 @@
+{
+  "name": "gestion-citations",
+  "version": "1.0.1",
+  "description": "Application Gestion Citations (Using Express & MySql)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohammed Amine Bettaoui",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}

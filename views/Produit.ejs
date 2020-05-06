@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<div class="container-fluid">
+  <div class="align-center">
+    <a href="/addProduit" class="btn btn-lg btn-success">Ajout Produit</a>
+    <a href="/addFournisseur" class="btn btn-lg btn-success">Ajout Fournisseur</a>
+    <a href="/addRayon" class="btn btn-lg btn-success">Ajout Rayons</a>
+    <a href="/rayons" class="btn btn-lg btn-success">Consultation Rayons</a>
+    <a href="/Fournisseur" class="btn btn-lg btn-success">Consultation Fournisseur</a>
+  </div>
+
+  <h1><%= title %></h1><br>
+      <div class="row mb-5">
+
+       <% rows.forEach(function(row){ %>
+               <div class="col-3" >
+                <div class="card">
+                    <div class="card-header align-center"><h1 align="center">produit N°:<%= row.id_produit %></h1></div>
+                   <div class="card-body">
+
+                    <h3 class="card-text align-center text-muted" style="color: white;">Fournisseur N°:<%= row.id_fournisseur %></h3>
+                    <h3 class="card-text align-center text-muted" style="color: white;">Rayon N°:<%= row.id_rayon %></h3>
+                    <h3 class="card-text align-center" style="color: white;">Nom :<%= row.nom_produit %></h3>
+                    <h3 class="card-text align-center" style="color: white;">Quantité:<%= row.quantite %></h3>
+
+
+           <a href="edit/<%= row.id_produit %>" class="btn btn-lg   btn-info">Edit</a>
+          <a href="delete/<%= row.id_produit %>" class="btn btn-lg  btn-warning">Delete</a>
+    </div>
+    </div>
+    </div>
+
+
+ <% }); %>
+  </div>
+  </div>
+</body>
+</html>

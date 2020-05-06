@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="align-center">
+      <a href="/addProduit" class="btn btn-lg btn-success">Ajout Produit</a>
+      <a href="/addFournisseur" class="btn btn-lg btn-success">Ajout Fournisseur</a>
+      <a href="/addRayon" class="btn btn-lg btn-success">Ajout Rayons</a>
+      <a href="/rayons" class="btn btn-lg btn-success">Consultation Rayons</a>
+      <a href="/Fournisseur" class="btn btn-lg btn-success">Consultation Fournisseur</a>
+    </div>
+
+  <h1><%= title %></h1><br>
+      <div class="row mb-5">
+
+       <% rows.forEach(function(row){ %>
+               <div class="col-3" >
+                <div class="card">
+                    <div class="card-header align-center"><h1 align="center">Fournisseur N°:<%= row.id_fournisseur %></h1></div>
+                   <div class="card-body">
+
+                    <h3 class="card-text align-center text-muted" style="color: white;">Nom Fournisseur:<%= row.nom %></h3>
+                    <h3 class="card-text align-center text-muted" style="color: white;">Tel °:<%= row.tel %></h3>
+
+
+
+           <a href="edit/<%= row.id_rayon %>" class="btn btn-lg   btn-info">Edit</a>
+          <a href="delete/<%= row.id_rayon %>" class="btn btn-lg  btn-warning">Delete</a>
+    </div>
+    </div>
+    </div>
+
+
+ <% }); %>
+  </div>
+  </div>
+</body>
+</html>
