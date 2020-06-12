@@ -4,12 +4,53 @@
   <title><%= title %></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./public/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./public/css/main.css">
-</head>
-</head>
-<body>
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="./public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="./public/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="./public/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="./public/lib/venobox/venobox.css" rel="stylesheet">
+  <link href="./public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+  <!-- Main Stylesheet File -->
+  <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+        <a href="#intro" class="scrollto"><img src="logo.jpg" ></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/Home" class="btn btn-lg btn-success">Home | Produit</a></li>
+          <li><a href="/addProduit" class="btn btn-lg btn-success">Ajout Produit</a></li>
+          <li><a href="/addFournisseur" class="btn btn-lg btn-success">Ajout Fournisseur</a></li>
+          <li><a href="/addRayon" class="btn btn-lg btn-success">Ajout Rayons</a></li>
+          <li><a href="/rayons" class="btn btn-lg btn-success">Consultation Rayons</a></li>
+          <li><a href="/Fournisseur" class="btn btn-lg btn-success">Consultation Fournisseur</a></li>
+
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header>
 <div class="container">
   <h1><%= title %></h1>
   <form action="/updateProduit" method="post">
@@ -36,5 +77,60 @@
   </form>
 </div>
 
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6 footer-info">
+          <img src="logo.jpg" alt="Management">
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="fa fa-angle-right"></i> <a href="/Home">Home</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="/addProduit">Add Product</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="/addFournisseur">Add Fournisseur</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="/addRayon">Add Rayons</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="/rayons">Rayons</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="/Fournisseur">Fournisseur</a></li>
+          </ul>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            Hay Essalam Street <br>
+            Safi, NY 535022<br>
+            Morrocco <br>
+            <strong>Phone:</strong> +212-641419778<br>
+            <strong>Email:</strong> bettapro100@gmail.com<br>
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong>YouCode Safi</strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="https://bootstrapmade.com/">Mohammed Amine Bettaoui</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

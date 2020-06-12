@@ -34,7 +34,7 @@ app.set('views',path.join(__dirname,'views'));
 
 //------------------------------------Routes Part----------------------------------
 
-app.get('/',(req, res) => {
+app.get('/Home',(req, res) => {
 
     let sql = "SELECT * FROM produit";
     connection.query(sql, (err, rows) => {
@@ -80,13 +80,15 @@ app.get('/addProduit',(req, res) => {
   let idR ;
   let sql1 = "SELECT id_rayon FROM rayons";
   connection.query(sql1, (err, rows) => {
+
     idR = rows;
       if(err) throw err;
+      res.render('AjoutProduit', {
+          title : 'Ajouter Un produit',
+          idR : idR
+      });
         });
-    res.render('AjoutProduit', {
-        title : 'Ajouter Un produit',
-        idR : idR
-    });
+
 
 });
 
