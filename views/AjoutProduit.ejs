@@ -51,7 +51,40 @@
       </nav><!-- #nav-menu-container -->
     </div>
   </header>
+  <div class="container">
+    <h1><%= title %></h1>
+    <form action="/SaveProduit" method="POST">
+      <div class="form-group">
+        <label>Id_Rayon:</label>
+        <select class="form-control" name="idrayon">
+          <% idR.forEach(function(row){ %>
+           <option name=""><%= row.id_rayon %></option>
 
+             <% });%>
+       </select>
+      </div>
+      <div class="form-group">
+        <label>Id_Fournisseur:</label>
+        <select class="form-control" name="idfour">
+            <% idF.forEach(function(row){ %>
+                <option name=""><%= row.id_fournisseur %></option>
+
+                  <% });%>
+       </select>
+      </div>
+
+      <div class="form-group">
+        <label>Nom_Produit:</label>
+        <input type="text" class="form-control"  placeholder="Enter Name" name="nom">
+      </div>
+      <div class="form-group">
+        <label>Quantité:</label>
+        <input type="number" class="form-control" name="quant">
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
 
   <footer id="footer">
     <div class="footer-top">

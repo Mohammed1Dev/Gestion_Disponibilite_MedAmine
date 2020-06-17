@@ -77,15 +77,23 @@ app.get('/Fournisseur',(req, res) => {
 });
 
 app.get('/addProduit',(req, res) => {
-  let idR ;
+  let idR;
+  let idF;
   let sql1 = "SELECT id_rayon FROM rayons";
+  let sql2 =  "SELECT id_fournisseur FROM fournisseur"
   connection.query(sql1, (err, rows) => {
 
     idR = rows;
       if(err) throw err;
+      connection.query(sql2, (err, rows) => {
+        idF = rows;
+          if(err) throw err;
       res.render('AjoutProduit', {
           title : 'Ajouter Un produit',
-          idR : idR
+          idR : idR,
+          idF : idF
+
+      });
       });
         });
 
@@ -94,11 +102,12 @@ app.get('/addProduit',(req, res) => {
 
 app.post('/SaveProduit',(req, res) => {
 
-    let data = {id_produit: req.body.idP, id_fournisseur: req.body.idF, id_rayon: req.body.idR, nom_produit: req.body.nom, quantite: req.body.quantite};
+    let data = {id_rayon: req.body.idrayon, id_fournisseur: req.body.idfour,nom_produit: req.body.nom, quantite: req.body.quant};
     let sql = "INSERT INTO produit SET ?";
     connection.query(sql, data,(err, results) => {
       if(err) return err;
-      res.redirect('/');
+
+      res.redirect('/Home');
     });
 });
 
