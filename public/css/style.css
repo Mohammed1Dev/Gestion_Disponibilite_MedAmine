@@ -149,7 +149,7 @@ h6 {
   padding: 103px 79px 25px 0px;
   transition: all 0.5s;
   border-bottom: 2px solid darkgray;
-  background-image: url('vert.jpg');
+  background-image: url('../img/vert.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }

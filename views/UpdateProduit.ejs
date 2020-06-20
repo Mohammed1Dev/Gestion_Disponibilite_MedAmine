@@ -4,27 +4,16 @@
   <title><%= title %></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="./public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="./public/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="./public/lib/animate/animate.min.css" rel="stylesheet">
-  <link href="./public/lib/venobox/venobox.css" rel="stylesheet">
-  <link href="./public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" href="main.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/lib/venobox/venobox.css" rel="stylesheet">
+  <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
   <!-- Main Stylesheet File -->
-  <link href="style.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -33,9 +22,8 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="#intro" class="scrollto"><img src="logo.jpg" ></a>
+
+        <a href="#intro" class="scrollto"><img src="/img/logo.jpg" ></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -48,34 +36,47 @@
           <li><a href="/Fournisseur" class="btn btn-lg btn-success">Consultation Fournisseur</a></li>
 
         </ul>
-      </nav><!-- #nav-menu-container -->
+      </nav>
     </div>
   </header>
-<div class="container">
-  <h1><%= title %></h1>
-  <form action="/updateProduit" method="post">
+  <div class="container">
+    <h1><%= title %></h1>
+    <form action="/updateProduct" method="post">
+      <div class="form-group">
 
-    <input type="hidden" value="<%= row.id_produit %>" name="id">
-    <div class="form-group">
-      <label for="idF">id_fournisseur:</label>
-      <input type="text" class="form-control"   value="<%= row.id_fournisseur %>" name="idF" required>
-    </div>
-    <div class="form-group">
-      <label for="idR">id_rayon:</label>
-      <input type="text" class="form-control"   value="<%= row.id_rayon %>" name="idR" required>
-    </div>
-    <div class="form-group">
-      <label for="Nom">Nom_produit:</label>
-      <input type="text" class="form-control"   value="<%= row.nom_produit %>" name="nom" required>
-    </div>
-    <div class="form-group">
-      <label for="Qun">Quantité:</label>
-      <input type="text" class="form-control"  value="<%= row.quantite %>" name="Qun" required>
-    </div>
+        <input type="hidden" value="<%= row.id_produit %>" name="idP">
+      </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+      <div class="form-group">
+        <label for="idF">id_fournisseur:</label>
+        <select class="form-control" name="idfourn">
+            <% idF.forEach(function(ro){ %>
+                <option name="" ><%= ro.id_fournisseur %></option>
+
+                  <% });%>
+       </select>
+      </div>
+      <div class="form-group">
+        <label for="idR">id_rayon:</label>
+        <select class="form-control" name="idrayon">
+          <% idR.forEach(function(ro){ %>
+           <option name=""><%= ro.id_rayon %></option>
+
+             <% });%>
+       </select>
+     </div>
+      <div class="form-group">
+        <label for="Nom">Nom_produit:</label>
+        <input type="text" class="form-control"   value="<%= row.nom_produit %>" name="nom">
+      </div>
+      <div class="form-group">
+        <label for="Qun">Quantité:</label>
+        <input type="text" class="form-control"  value="<%= row.quantite %>" name="Qun">
+       </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 
 <footer id="footer">
   <div class="footer-top">
@@ -83,7 +84,7 @@
       <div class="row">
 
         <div class="col-lg-3 col-md-6 footer-info">
-          <img src="logo.jpg" alt="Management">
+          <img src="/img/logo.jpg" alt="Management">
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links">
